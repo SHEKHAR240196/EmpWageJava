@@ -1,33 +1,41 @@
 package Emp;
 
-public class WagesPerMonth {
+public class WagesReachedForMonth {
+
 	public static void main(String[] args) {
-	
-		int totalSalary=0;
-		int empRatePerHr=20;
-		int numWorkDays=20;
-		for( int i=1; i<= numWorkDays; i++) {
-			int empCheck = (int)Math.floor(Math.random()*10) % 3;
-			 int empHrs=0;
-			  
-				
-             switch (empCheck) {
+		int WAGE_PER_HR=20;
+        int ISFULLTIME=1;
+        int ISPARTTIME=2;
+        int WORKINGDAYS=20;
+        int WORK_HR_IN_MONTH=100;
+        int totalEmpHr=100;
+        int totalWorkingDays=20;
 
-                    case 1: empHrs=8;
-                            break;
-              
-	                case 2:   empHrs=4;
-                              break;
-	
-	                case 3 :   empHrs=0;
-                               break;
-    
-}
-             int salary = empHrs*empRatePerHr;
-             System.out.println("Employee Monthly wage is:" + salary);
-             totalSalary= totalSalary = salary;
-             System.out.println("Total Salary" + totalSalary);
-		}
 
+while (totalEmpHr < WORK_HR_IN_MONTH && totalWorkingDays < WORKINGDAYS ){
+               totalWorkingDays++;
+                int empCheck = (int)Math.floor(Math.random()*10) % 3;
+               
+	             int empHrs=0;
+  
+	
+	             switch (empCheck) {
+
+	                    case 1: empHrs=8;
+	                            break;
+	              
+		                case 2:   empHrs=4;
+	                              break;
+		
+		                case 3 :   empHrs=0;
+	                               break;
+        
+	}
+	totalEmpHr=totalEmpHr+empHrs;
 }
-}
+       int totalSalary=totalEmpHr*WAGE_PER_HR;
+
+System.out.println("Total Salary will be:"+ totalSalary);
+        }
+
+	}
