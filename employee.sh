@@ -1,35 +1,33 @@
 package Emp;
 
-public class SwitchEmpPartWage {
+public class WagesPerMonth {
 	public static void main(String[] args) {
-		
-		int IS_PART_TIME = 2;
-		int IS_FULL_TIME = 1;
-		int empHrs;
-		int WageRatePerHrs = 20;
-		
-		int EmpCheck = (int)Math.floor(Math.random()*10)%3;
-		///System.out.println(EmpCheck);
-		
-		switch (EmpCheck) {
-		
-		case 1:
-			System.out.println("Employee is Full Time");
-			empHrs = 8;
-			break;
-			
-		case 2:
-			System.out.println("Employee is Part Time");
-			empHrs = 4;
-			break;
-			
-		default:
-			empHrs = 0;
-			System.out.println("Employee is Absent");
-		}
-		
-		System.out.println("Employee Wage is:" + Math.multiplyExact(WageRatePerHrs, empHrs));
-	}
 	
+		int totalSalary=0;
+		int empRatePerHr=20;
+		int numWorkDays=20;
+		for( int i=1; i<= numWorkDays; i++) {
+			int empCheck = (int)Math.floor(Math.random()*10) % 3;
+			 int empHrs=0;
+			  
+				
+             switch (empCheck) {
 
+                    case 1: empHrs=8;
+                            break;
+              
+	                case 2:   empHrs=4;
+                              break;
+	
+	                case 3 :   empHrs=0;
+                               break;
+    
+}
+             int salary = empHrs*empRatePerHr;
+             System.out.println("Employee Monthly wage is:" + salary);
+             totalSalary= totalSalary = salary;
+             System.out.println("Total Salary" + totalSalary);
+		}
+
+}
 }
